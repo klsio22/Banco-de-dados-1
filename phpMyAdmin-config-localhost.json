@@ -1,0 +1,14 @@
+{
+    "NavigationWidth": 314,
+    "Console\/Mode": "show",
+    "Console\/Height": 95.97668199999998250859789550304412841796875,
+    "Export\/sql_dates": true,
+    "Server\/hide_db": "",
+    "Server\/only_db": "",
+    "2fa": {
+        "type": "db",
+        "backend": "",
+        "settings": []
+    },
+    "lang": "pt"
+}
