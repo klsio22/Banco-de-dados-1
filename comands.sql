@@ -83,15 +83,69 @@ AFTER `caledary`;
 /* Correção do error #1452
  
  ERROR 1452: Cannot add or update a child row: a foreign key constraint fails
-
+ 
  https://stackoverflow.com/questions/21659691/error-1452-cannot-add-or-update-a-child-row-a-foreign-key-constraint-fails
  */
 /* ========= 1) For Session (recommended) =============*/
 SET FOREIGN_KEY_CHECKS = 0;
 /* ======= 2) Globally ============*/
 SET GLOBAL FOREIGN_KEY_CHECKS = 0;
-
 /* Inserir valores nas colunas das tabelas exemplo */
-INSERT INTO `departament` (`id_departament`, `description`) VALUES (NULL, 'Financeiro');  
+INSERT INTO `departament` (`id_departament`, `description`)
+VALUES (NULL, 'Financeiro');
 /* Trocar valores dos ids externos  */
-UPDATE `employee` SET `id_departament` = '4' WHERE `employee`.`id_employee` = 6;
+UPDATE `employee`
+SET `id_departament` = '4'
+WHERE `employee`.`id_employee` = 6;
+/* 
+ A sintaxe de um comando SELECT com a cláusula WHERE possui a sintaxe do quadro abaixo:
+ */
+SELECT < campos da tabela >
+FROM < nome da tabela >
+WHERE < condição >;
+/* Condicionais após o where  */
+SELECT *
+FROM pedido
+WHERE data >= '2017-01-01'
+  AND data <= '2017-12-31'
+  AND total <= 50000
+  /* 
+   Quando é necessário que um filtro com diversos valores seja aplicado em uma determinada
+   coluna 
+   */
+SELECT *
+FROM funcionario
+WHERE salario_fixo IN (500, 1000, 2000)
+ORDER BY nome;
+/*
+ 
+ O comando BETWEEN tem a função de selecionar um intervalo de valores.
+ 
+ */
+SELECT *
+FROM pedido
+WHERE data BETWEEN '2014-01-01' AND '2017-12-31'
+ORDER BY data;
+/*
+ 
+ O comando NULL é utilizado para selecionar campos que possuem valor nulo. Um campo nulo
+ não é diferente de um campo vazio.  
+ 
+ */
+SELECT *
+FROM cliente
+WHERE endereco IS NULL;
+/*  */
+CREATE TABLE employee(
+  id_employee INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  id_departament INT(11) NULL,
+  number_phone VARCHAR(11) NULL,
+  birth_date DATE NULL,
+  hiring_date DATE NULL,
+  gender CHAR(1) NULL,
+  salary DECIMAL(10, 2) NULL,
+  work_overtime DECIMAL(10, 2) NULL,
+  id_education_level INT(11) NULL
+);
