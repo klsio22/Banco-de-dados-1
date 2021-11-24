@@ -13,9 +13,6 @@ FROM employee_projecty
 WHERE employee_projecty.date_initial BETWEEN '2015-07-01' AND '2015-12-31'
 ORDER BY employee_projecty.date_initial ASC
    /*
-    ============= 2 ================
-    */
-   /*
     ============= 3 ================
     */
 SELECT employee.id_employee,
