@@ -104,21 +104,38 @@ FROM project
 WHERE project.date_initial = '2014-05-08'
 ORDER BY project.id_departament,
   project.date_initial
+  /*  */
+SELECT employee_projecty.id_activity,
+  manager.first_name as 'Name Manager',
+  employee_projecty.date_initial,
+  employee_projecty.id_project,
+  empo.last_name as 'Employee Last Name',
+  employee_projecty.id_activity
+FROM 
+
+
+
+  JOIN employee manager ON departament.id_departament_management = manager.id_employee
+WHERE proje.date_initial = '2014-05-08'
+ORDER BY employee_projecty.id_activity,
+  employee_projecty.date_initial
   /*
    ============= 9 ================
    */
 SELECT departament.id_departament,
-  emplo.last_name as 'Employee',
-  emplo.hiring_date,
-  manager.last_name as 'Manager',
-  manager.hiring_date
+  manager.last_name AS 'Manager',
+  emplo.last_name AS 'Employee',
+  manager.hiring_date,
+  emplo.hiring_date
 FROM employee emplo
   JOIN departament USING(id_departament)
-  JOIN employee manager on departament.id_manager = manager.id_employee
+  JOIN employee manager ON departament.id_manager = manager.id_employee
 WHERE (departament.id_departament = 3)
   AND emplo.hiring_date < manager.hiring_date
-ORDER by emplo.last_name
-  /*
-   
+
+ORDER BY emplo.last_name
+
+
+ /*
    ============= 10 ================
    */
