@@ -15,6 +15,19 @@ ORDER BY employee_projecty.date_initial ASC
    /*
     ============= 2 ================
     */
+
+   SELECT id_departament,
+   employee.last_name,
+   employee.salary,
+   id_activity,
+   last_name
+FROM employee_projecty
+   JOIN project USING(id_project)
+   JOIN employee USING(id_employee)
+WHERE employee_projecty.date_initial BETWEEN '2015-07-01' AND '2015-12-31'
+ORDER BY employee_projecty.date_initial ASC
+
+
    /*
     ============= 3 ================
     */
