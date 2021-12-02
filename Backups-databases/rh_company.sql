@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 22-Nov-2021 às 06:39
+-- Tempo de geração: 25-Nov-2021 às 22:07
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `activity`
 --
 -- Criação: 22-Nov-2021 às 04:26
--- Última actualização: 22-Nov-2021 às 05:04
 --
 
 CREATE TABLE `activity` (
@@ -57,7 +56,6 @@ INSERT INTO `activity` (`id_activity`, `description`) VALUES
 -- Estrutura da tabela `departament`
 --
 -- Criação: 22-Nov-2021 às 04:44
--- Última actualização: 22-Nov-2021 às 05:20
 --
 
 CREATE TABLE `departament` (
@@ -87,7 +85,6 @@ INSERT INTO `departament` (`id_departament`, `name`, `id_manager`, `id_departame
 -- Estrutura da tabela `education_level`
 --
 -- Criação: 22-Nov-2021 às 03:08
--- Última actualização: 22-Nov-2021 às 05:08
 --
 
 CREATE TABLE `education_level` (
@@ -113,7 +110,6 @@ INSERT INTO `education_level` (`id_education_level`, `description`) VALUES
 -- Estrutura da tabela `employee`
 --
 -- Criação: 22-Nov-2021 às 04:46
--- Última actualização: 22-Nov-2021 às 05:17
 --
 
 CREATE TABLE `employee` (
@@ -156,7 +152,6 @@ INSERT INTO `employee` (`id_employee`, `first_name`, `last_name`, `id_departamen
 -- Estrutura da tabela `employee_projecty`
 --
 -- Criação: 22-Nov-2021 às 05:34
--- Última actualização: 22-Nov-2021 às 05:35
 --
 
 CREATE TABLE `employee_projecty` (
@@ -204,7 +199,6 @@ INSERT INTO `employee_projecty` (`id_project`, `id_employee`, `id_activity`, `ti
 -- Estrutura da tabela `project`
 --
 -- Criação: 22-Nov-2021 às 05:34
--- Última actualização: 22-Nov-2021 às 05:28
 --
 
 CREATE TABLE `project` (
