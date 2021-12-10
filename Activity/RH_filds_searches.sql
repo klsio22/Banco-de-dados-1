@@ -100,20 +100,20 @@ ORDER BY last_name
    =============   10  ====================
    */
 SELECT *
-FROM `departament`
+FROM departament
 WHERE id_departament_management is null
   /*
    =============   11 ====================
    */
 SELECT *
-FROM `departament`
+FROM departament
 WHERE NAME LIKE 'D%S'
   AND id_manager IS NOT NULL
   /*
    =============   12 ====================
    */
 SELECT id_departament
-FROM `project`
+FROM project
 WHERE description LIKE '%sistema%'
   /*
    =============   13 ====================
